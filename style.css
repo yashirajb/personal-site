@@ -1,0 +1,298 @@
+
+.column-layout{
+    max-width: 1300 px;
+    background-color: #FFF;
+    margin: 40px auto 0 auto;
+    line-height: 1.65;
+    padding: 20px 50px;
+    /* 3 divs will now sit side by side */
+    display: flex;
+}
+
+.main-column{
+    /* element under flex 1 will be same size as siblings */
+    /* element under flex 2 will be twice the size as siblings */
+    /* element under flex 3 will be three times the size as siblings */
+    flex: 3; 
+    order: 2; 
+}
+
+.sidebar-one{
+    flex: 1; 
+    order: 1; 
+}
+
+.sidebar-two{
+    flex: 1; 
+    order: 3; 
+}
+
+.profile-cards-container{
+    max-width: 1400px;
+    margin: 40px auto 0 auto;
+  
+}
+
+.profile-card{
+    /* with flexbox, whenever you have padding and width, you want to include box-sizing: border-box so the math stays simple */
+    padding: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    /* with width set to 30%, the three card columns will take up 90% of the available space
+    and the remaining 10% can be distributed to the outer margins */
+    /* width: 30%; */
+    /* this is the flexbox way of referring to width  */
+    flex-basis: 30%;
+}
+
+/* targeting the parent (or container) class */
+@media (min-width: 900px) {
+    .profile-cards-container {
+        display: flex;
+        /* align-items: flex-start; */
+        /* this comes after you establish the box sizing below, the remaining 10% of 
+        margin will go in between each card, using space between (there are other preferences for justify content, space between is just one */
+        justify-content: space-between;
+    }
+}
+
+/* .profile-card:nth-child(1){background-color: #c0dbe2;}
+.profile-card:nth-child(2){background-color: #cdf1c3;}
+.profile-card:nth-child(3){background-color: #ccb9da;} */
+
+.app-examples-container{
+    max-width: 1400px;
+    margin: 40px auto 0 auto;
+    background-color: #FFF;
+    padding: 30px 0; 
+    display: flex;
+    align-items: center;
+    /* makes nice even margins in between plain numbers (no styling yet) */
+    justify-content: space-around; 
+    flex-wrap: wrap;
+}
+
+.app-example{
+    width: 150px;
+    height: 100px;
+    background-color: #990b47;
+    color: #FFF;
+    line-height: 100px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.bottom-box {
+    height: 400px;
+    max-width: 700px;
+    margin: 40px auto 40px auto;
+    background-color:#59BFBE;
+    /* added to help center text (see .centered-text) */
+    display: flex;
+
+}
+
+.centered-text {
+    color: #FFF;
+    font-size: 50px;
+    /* no width and height value, that's dynamically determined by the numbers of letters and the font size
+    so the width and height are unknown which typically causes problems */
+    /* to center the text, add display: flex to the parent above, and then add margin: 0 auto; sets horizontal margin (no vertical margin set) */
+    margin: auto; 
+}
+
+
+/*********************************** PRODUCT CARD CSS ******************************/
+
+
+/* MPO ---margin, padding, outline */
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none; 
+
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    background: #353535;
+}
+
+.container {
+    width: 280px;
+    height: 500px;
+    margin: 60px auto;
+    margin-left: 100px; 
+}
+
+.card {
+
+}
+
+
+/* Top portion of card */
+
+.card-head {
+    position: relative;
+    height: 252px;
+    background: #fa782e; 
+    /**** copied from site ****/
+    background: -moz-linear-gradient(-45deg,  #fa782e 8%, #c82930 83%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  #fa782e 8%,#c82930 83%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg,  #fa782e 8%,#c82930 83%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fa782e', endColorstr='#c82930',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    border-radius: 25px 25px 0 0;
+    /*******/
+}
+
+/* Corner picture (books and apple) */
+/* .card-logo{
+    width: 75px;
+    margin: 20px;
+    border-radius: 100px;
+    
+} */
+
+/* Student Picture */
+
+.student-img{
+    /* position: relative; */
+    left: 0;
+    margin-top: -16px;
+    margin-left: 50px;
+    border-radius: 100px;
+}
+
+/* Description (didn't work) */
+/* .student-profile{
+    padding: 0 20px;
+    font-size: 11px;
+    color: #fff;
+}
+
+.student-profile h2{
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+
+} */
+
+/* School Initials (SEA) */
+
+.back-text{
+    display: inline-block;
+    font-size: 125px;
+    font-weight: 900;
+    margin-left: -7px;
+    margin-top: -12px;
+    opacity: 0.1;
+
+}
+
+/* Lower portion of card */
+
+.card-body {
+    height: 255px;
+    background: #fff;
+    border-radius: 0 0 25px 25px;
+}
+
+/* Student Full Name */
+.student-name{
+    padding: 20px 20px 5px 20px;
+    display: block;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+}
+
+/* Student last name (bolded) */
+.student-name b {
+    font-weight: 900;
+    letter-spacing: 0px;
+}
+
+
+/* Grade 12 */
+.badge {
+    position: relative;
+    font-size: 10px;
+    font-weight: 300;
+    color: #fff;
+    background: #11e95b;
+    padding: 2px 5px;
+    border-radius: 4px;
+    top: -2px;
+    margin-left: 5px;
+}
+
+/* Star rating */
+
+.checked{
+    color: orange;
+}
+
+.student-caption{
+    display: block;
+    padding: 0 20px;
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.student-performance-rating{
+    padding: 0 20px;
+    font-size: 11px; 
+}
+
+/* Both SUBJECTS and list of SUBJECTS move to the left */
+.student-stats{
+    /* margin-left: 20px; */
+}
+
+.student-subjects h4{
+    font-size: 11px;
+    padding: 0 21px;
+    margin-top: 15px; 
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.ul-subjects {
+    margin-left: 27px;
+}
+
+.ul-subjects li {
+    /* takes black dots away */
+    list-style: none; 
+    /* moves subjects from a list to inline */
+    float: left; 
+    /* places gaps between each subject */
+    margin-right: 20px; 
+
+}
+
+.ul-subjects li a {
+    display: inline-block;
+    /* takes off underline */
+    text-decoration: none;
+    font-size: 11px;
+    /* moves them back in line */
+    width: 62px; 
+    height: 22px; 
+    border-radius: 100%;
+    text-align: center; 
+    line-height: 23px;
+    color: #000; 
+}
+
+.ul-subjects li a.active{
+    background: #f35e3d; 
+    color: #fff;
+}
